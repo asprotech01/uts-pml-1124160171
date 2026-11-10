@@ -64,11 +64,11 @@ class ProfilePage extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'NIM : 1124160171 - Software Engineering',
+                'NIM: 1124160171 - Software Engineering',
                 style: textTheme.bodyMedium,
               ),
               const SizedBox(height: 4),
-              Text('Kelas : TI24SESH', style: textTheme.bodyMedium),
+              Text('Kelas: TI24SESH', style: textTheme.bodyMedium),
             ],
           ),
         ),
