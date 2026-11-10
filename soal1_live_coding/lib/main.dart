@@ -14,13 +14,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 45, 143, 218),
+        ),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.green,
+          seedColor: const Color.fromARGB(255, 45, 143, 218),
           brightness: Brightness.dark,
         ),
       ),
@@ -65,6 +67,8 @@ class ProfilePage extends StatelessWidget {
                 'NIM : 1124160171 - Software Engineering',
                 style: textTheme.bodyMedium,
               ),
+              const SizedBox(height: 4),
+              Text('Kelas : TI24SESH', style: textTheme.bodyMedium),
             ],
           ),
         ),
