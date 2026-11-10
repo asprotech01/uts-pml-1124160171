@@ -98,17 +98,18 @@ class ProfilePage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               Text('Kelas: TI24SESH', style: textTheme.bodyMedium),
+              const SizedBox(height: 20),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.0),
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
                     'Informasi Kontak',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-              const SizedBox(height: 4),
+              const SizedBox(height: 8),
               Card(
                 elevation: 2,
                 shape: RoundedRectangleBorder(
