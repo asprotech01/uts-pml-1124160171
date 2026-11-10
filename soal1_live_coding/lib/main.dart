@@ -67,8 +67,55 @@ class ProfilePage extends StatelessWidget {
                 'NIM: 1124160171 - Software Engineering',
                 style: textTheme.bodyMedium,
               ),
-              const SizedBox(height: 4),
+              const SizedBox(height: 8),
               Text('Kelas: TI24SESH', style: textTheme.bodyMedium),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4.0),
+                  child: Text(
+                    'Informasi Kontak',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 4),
+              Card(
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Column(
+                    children: const [
+                      InfoTile(
+                        icon: Icons.email,
+                        label: 'Email',
+                        value: 'achmadspro@gmail.com',
+                      ),
+                      Divider(height: 1),
+                      InfoTile(
+                        icon: Icons.phone,
+                        label: 'Nomor HP',
+                        value: '083890103616',
+                      ),
+                      Divider(height: 1),
+                      InfoTile(
+                        icon: Icons.class_,
+                        label: 'Kelas',
+                        value: 'TISE24SH',
+                      ),
+                      Divider(height: 1),
+                      InfoTile(
+                        icon: Icons.code,
+                        label: 'Akun GitHub',
+                        value: 'github.com/asprotech01',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
