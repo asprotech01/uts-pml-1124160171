@@ -149,6 +149,12 @@ class ProfilePage extends StatelessWidget {
                         label: 'Design',
                         value: 'Figma, CorelDraw, Adobe Illustrator, Adobe Photoshop',
                       ),
+                      Divider(height: 1),
+                      InfoTile(
+                        icon: Icons.sports_esports,
+                        label: 'Hobi',
+                        value: 'Coding, Desain, Gaming, Traveling',
+                      ),
                     ],
                   ),
                 ),
