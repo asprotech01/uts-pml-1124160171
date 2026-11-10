@@ -116,6 +116,37 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
               ),
+
+              const SizedBox(height: 20),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4.0),
+                  child: Text(
+                    'Keahlian dan Hobi',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8),
+              Card(
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Column(
+                    children: const [
+                      InfoTile(
+                        icon: Icons.laptop_mac,
+                        label: 'Pemrograman',
+                        value: 'Flutter, Laravel, PHP, JavaScript',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
