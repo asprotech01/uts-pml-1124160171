@@ -36,8 +36,13 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Profil Achmad Sofyan')),
-      body: const Center(child: Text('Achmad Sofyan')),
+      appBar: AppBar(
+        title: const Text('Profil Mahasiswa'),
+        actions: [
+          IconButton(icon: const Icon(Icons.info_outline), onPressed: () {}),
+        ],
+      ),
+      body: const SizedBox(),
     );
   }
 }
