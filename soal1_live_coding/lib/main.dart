@@ -146,7 +146,7 @@ class ProfilePage extends StatelessWidget {
                       Divider(height: 1),
                       InfoTile(
                         icon: Icons.design_services,
-                        label: 'Designcd',
+                        label: 'Design',
                         value: 'Figma, CorelDraw, Adobe Illustrator, Adobe Photoshop',
                       ),
                     ],
