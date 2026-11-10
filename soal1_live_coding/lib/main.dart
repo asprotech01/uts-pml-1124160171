@@ -64,7 +64,14 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Profil Mahasiswa'),
         actions: [
-          IconButton(icon: const Icon(Icons.info_outline), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Menu informasi diklik')),
+              );
+            },
+          ),
         ],
       ),
       body: SafeArea(
