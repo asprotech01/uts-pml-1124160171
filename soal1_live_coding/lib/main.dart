@@ -35,6 +35,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil Mahasiswa'),
@@ -47,7 +48,24 @@ class ProfilePage extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [],
+            children: [
+              const CircleAvatar(
+                radius: 50,
+                child: Icon(Icons.person, size: 50),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Achmad Sofyan',
+                style: textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                'NIM : 1124160171 - Software Engineering',
+                style: textTheme.bodyMedium,
+              ),
+            ],
           ),
         ),
       ),
