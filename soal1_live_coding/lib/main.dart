@@ -143,6 +143,12 @@ class ProfilePage extends StatelessWidget {
                         label: 'Pemrograman',
                         value: 'Flutter, Laravel, PHP, JavaScript',
                       ),
+                      Divider(height: 1),
+                      InfoTile(
+                        icon: Icons.design_services,
+                        label: 'Designcd',
+                        value: 'Figma, CorelDraw, Adobe Illustrator, Adobe Photoshop',
+                      ),
                     ],
                   ),
                 ),
