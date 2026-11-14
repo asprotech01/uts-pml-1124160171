@@ -9,10 +9,27 @@ class ProfilMahasiswaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Aplikasi Profil Mahasiswa',
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: Center(child: Text('Aplikasi Profil Mahasiswa'))),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 45, 143, 218),
+          brightness: Brightness.light,
+        ),
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 45, 143, 218),
+          brightness: Brightness.dark,
+        ),
+      ),
+      themeMode: ThemeMode.system,
+      home: const Scaffold(
+        body: Center(child: Text('Aplikasi Profil Mahasiswa')),
+      ),
     );
   }
 }
