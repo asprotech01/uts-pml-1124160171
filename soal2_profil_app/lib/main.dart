@@ -10,6 +10,8 @@ class ProfilMahasiswaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      title: 'Aplikasi Profil Mahasiswa',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(body: Center(child: Text('Aplikasi Profil Mahasiswa'))),
     );
   }
