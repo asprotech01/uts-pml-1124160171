@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/profile_page.dart';
+
 void main() {
   runApp(const ProfilMahasiswaApp());
 }
@@ -27,9 +29,7 @@ class ProfilMahasiswaApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.system,
-      home: const Scaffold(
-        body: Center(child: Text('Aplikasi Profil Mahasiswa')),
-      ),
+      home: const ProfilePage(),
     );
   }
 }
