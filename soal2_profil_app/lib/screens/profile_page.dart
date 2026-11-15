@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
-import 'about_page.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final ValueChanged<int> onNavigate;
+
+  const ProfilePage({super.key, required this.onNavigate});
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +54,7 @@ class ProfilePage extends StatelessWidget {
               title: const Text('Profil Mahasiswa'),
               onTap: () {
                 Navigator.pop(context);
+                onNavigate(0);
               },
             ),
             ListTile(
@@ -60,11 +62,7 @@ class ProfilePage extends StatelessWidget {
               title: const Text('Tentang Saya'),
               onTap: () {
                 Navigator.pop(context);
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AboutPage()),
-                );
+                onNavigate(1);
               },
             ),
           ],

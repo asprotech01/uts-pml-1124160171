@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/profile_page.dart';
+import 'screens/about_page.dart';
 
 void main() {
   runApp(const ProfilMahasiswaApp());
@@ -29,7 +30,53 @@ class ProfilMahasiswaApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.system,
-      home: const ProfilePage(),
+      home: const MainNavigationPage(),
+    );
+  }
+}
+
+class MainNavigationPage extends StatefulWidget {
+  const MainNavigationPage({super.key});
+
+  @override
+  State<MainNavigationPage> createState() => _MainNavigationPageState();
+}
+
+class _MainNavigationPageState extends State<MainNavigationPage> {
+  int selectedIndex = 0;
+
+  void changePage(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: IndexedStack(
+        index: selectedIndex,
+        children: [
+          ProfilePage(onNavigate: changePage),
+          AboutPage(onNavigate: changePage),
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: selectedIndex,
+        onDestinationSelected: changePage,
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.person_outline),
+            selectedIcon: Icon(Icons.person),
+            label: 'Profil',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.info_outline),
+            selectedIcon: Icon(Icons.info),
+            label: 'Tentang Saya',
+          ),
+        ],
+      ),
     );
   }
 }
