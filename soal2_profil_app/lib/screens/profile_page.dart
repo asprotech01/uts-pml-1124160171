@@ -4,24 +4,52 @@ import '../models/profile.dart';
 import '../widgets/info_tile.dart';
 import 'edit_profile_page.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   final ValueChanged<int> onNavigate;
 
   const ProfilePage({super.key, required this.onNavigate});
 
   @override
-  Widget build(BuildContext context) {
-    final profile = Profile(
-      nama: 'Achmad Sofyan',
-      nim: '1124160171',
-      prodi: 'Software Engineering',
-      kelas: 'TI24SESH',
-      bio: 'Mahasiswa yang tertarik pada pengembangan aplikasi mobile, pemrograman, dan desain.',
-      email: 'achmadspro@gmail.com',
-      hp: '083890103616',
-      github: 'github.com/asprotech01',
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  Profile profile = Profile(
+    nama: 'Achmad Sofyan',
+    nim: '1124160171',
+    prodi: 'Software Engineering',
+    kelas: 'TI24SESH',
+    bio: 'Mahasiswa yang tertarik pada pengembangan aplikasi mobile, pemrograman, dan desain.',
+    email: 'achmadspro@gmail.com',
+    hp: '083890103616',
+    github: 'github.com/asprotech01',
+  );
+
+  Future<void> editProfile() async {
+    final updatedProfile = await Navigator.push<Profile>(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditProfilePage(profile: profile),
+      ),
     );
 
+    if (!mounted) {
+      return;
+    }
+
+    if (updatedProfile != null) {
+      setState(() {
+        profile = updatedProfile;
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Profil berhasil diperbarui!')),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profil Mahasiswa'),
@@ -42,12 +70,9 @@ class ProfilePage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              child: Center(
-                child: Text(
-                  'Aplikasi Profil Mahasiswa',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
+              child: Text(
+                'Aplikasi Profil Mahasiswa',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
             ListTile(
@@ -55,44 +80,30 @@ class ProfilePage extends StatelessWidget {
               title: const Text('Profil Mahasiswa'),
               onTap: () {
                 Navigator.pop(context);
-                onNavigate(0);
+                widget.onNavigate(0);
               },
             ),
             ListTile(
-              leading: const Icon(Icons.info_outline),
+              leading: const Icon(Icons.info),
               title: const Text('Tentang Saya'),
               onTap: () {
                 Navigator.pop(context);
-                onNavigate(1);
+                widget.onNavigate(1);
               },
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => EditProfilePage(profile: profile),
-            ),
-          );
-        },
-        child: const Icon(Icons.edit),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 20),
-                const Center(
-                  child: CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('assets/images/sofyan.jpeg'),
-                  ),
+                const SizedBox(height: 12),
+                const CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage('assets/images/sofyan.jpeg'),
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -105,7 +116,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'NIM: ${profile.nim}',
+                  profile.nim,
                   style: const TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
@@ -117,7 +128,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Kelas: ${profile.kelas}',
+                  profile.kelas,
                   style: const TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
@@ -127,28 +138,22 @@ class ProfilePage extends StatelessWidget {
                   style: const TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 24),
                 const Align(
                   alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text(
-                      'Informasi Kontak',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  child: Text(
+                    'Informasi Kontak',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 10),
                 Card(
                   elevation: 2,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: 8),
                     child: Column(
                       children: [
                         InfoTile(
@@ -172,11 +177,14 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
               ],
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: editProfile,
+        child: const Icon(Icons.edit),
       ),
     );
   }
