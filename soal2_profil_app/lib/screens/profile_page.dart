@@ -20,7 +20,20 @@ class ProfilePage extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Profil Mahasiswa'), centerTitle: true),
+      appBar: AppBar(
+        title: const Text('Profil Mahasiswa'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info_outline),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Menu informasi diklik')),
+              );
+            },
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
