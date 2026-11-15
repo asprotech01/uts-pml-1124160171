@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
+import 'edit_profile_page.dart';
 
 class ProfilePage extends StatelessWidget {
   final ValueChanged<int> onNavigate;
@@ -67,6 +68,15 @@ class ProfilePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const EditProfilePage()),
+          );
+        },
+        child: const Icon(Icons.edit),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
