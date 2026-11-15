@@ -7,8 +7,25 @@ void main() {
   runApp(const ProfilMahasiswaApp());
 }
 
-class ProfilMahasiswaApp extends StatelessWidget {
+class ProfilMahasiswaApp extends StatefulWidget {
   const ProfilMahasiswaApp({super.key});
+
+  @override
+  State<ProfilMahasiswaApp> createState() => _ProfilMahasiswaAppState();
+}
+
+class _ProfilMahasiswaAppState extends State<ProfilMahasiswaApp> {
+  ThemeMode themeMode = ThemeMode.system;
+
+  void toggleTheme() {
+    setState(() {
+      if (themeMode == ThemeMode.dark) {
+        themeMode = ThemeMode.light;
+      } else {
+        themeMode = ThemeMode.dark;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +46,24 @@ class ProfilMahasiswaApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      themeMode: ThemeMode.system,
-      home: const MainNavigationPage(),
+      themeMode: themeMode,
+      home: MainNavigationPage(
+        themeMode: themeMode,
+        onToggleTheme: toggleTheme,
+      ),
     );
   }
 }
 
 class MainNavigationPage extends StatefulWidget {
-  const MainNavigationPage({super.key});
+  final ThemeMode themeMode;
+  final VoidCallback onToggleTheme;
+
+  const MainNavigationPage({
+    super.key,
+    required this.themeMode,
+    required this.onToggleTheme,
+  });
 
   @override
   State<MainNavigationPage> createState() => _MainNavigationPageState();
@@ -57,8 +84,16 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
       body: IndexedStack(
         index: selectedIndex,
         children: [
-          ProfilePage(onNavigate: changePage),
-          AboutPage(onNavigate: changePage),
+          ProfilePage(
+            onNavigate: changePage,
+            themeMode: widget.themeMode,
+            onToggleTheme: widget.onToggleTheme,
+          ),
+          AboutPage(
+            onNavigate: changePage,
+            themeMode: widget.themeMode,
+            onToggleTheme: widget.onToggleTheme,
+          ),
         ],
       ),
       bottomNavigationBar: NavigationBar(

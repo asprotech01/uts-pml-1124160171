@@ -6,8 +6,15 @@ import 'edit_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   final ValueChanged<int> onNavigate;
+  final ThemeMode themeMode;
+  final VoidCallback onToggleTheme;
 
-  const ProfilePage({super.key, required this.onNavigate});
+  const ProfilePage({
+    super.key,
+    required this.onNavigate,
+    required this.themeMode,
+    required this.onToggleTheme,
+  });
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -55,6 +62,15 @@ class _ProfilePageState extends State<ProfilePage> {
         title: const Text('Profil Mahasiswa'),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: Icon(
+              Theme.of(context).brightness == Brightness.dark
+                  ? Icons.light_mode
+                  : Icons.dark_mode,
+            ),
+            tooltip: 'Ganti Tema',
+            onPressed: widget.onToggleTheme,
+          ),
           IconButton(
             icon: const Icon(Icons.info_outline),
             onPressed: () {

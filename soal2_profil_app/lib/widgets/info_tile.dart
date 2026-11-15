@@ -14,12 +14,11 @@ class InfoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        leading: Icon(icon),
-        title: Text(label),
-        subtitle: Text(value),
-      ),
+    return ListTile(
+      shape: const RoundedRectangleBorder(side: BorderSide.none),
+      leading: Icon(icon),
+      title: Text(label),
+      subtitle: Text(value),
     );
   }
 }

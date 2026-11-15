@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 
 class AboutPage extends StatelessWidget {
   final ValueChanged<int> onNavigate;
+  final ThemeMode themeMode;
+  final VoidCallback onToggleTheme;
 
-  const AboutPage({super.key, required this.onNavigate});
+  const AboutPage({
+    super.key,
+    required this.onNavigate,
+    required this.themeMode,
+    required this.onToggleTheme,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +19,15 @@ class AboutPage extends StatelessWidget {
         title: const Text('Tentang Saya'),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: Icon(
+              Theme.of(context).brightness == Brightness.dark
+                  ? Icons.light_mode
+                  : Icons.dark_mode,
+            ),
+            tooltip: 'Ganti Tema',
+            onPressed: onToggleTheme,
+          ),
           IconButton(
             icon: const Icon(Icons.info_outline),
             onPressed: () {
