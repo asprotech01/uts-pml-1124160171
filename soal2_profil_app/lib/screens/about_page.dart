@@ -121,7 +121,54 @@ class AboutPage extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 20),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      'Hobi',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(Icons.computer),
+                          title: Text('Coding'),
+                        ),
+                        Divider(height: 1),
+                        ListTile(
+                          leading: Icon(Icons.palette),
+                          title: Text('Desain'),
+                        ),
+                        Divider(height: 1),
+                        ListTile(
+                          leading: Icon(Icons.sports_esports),
+                          title: Text('Gaming'),
+                        ),
+                        Divider(height: 1),
+                        ListTile(
+                          leading: Icon(Icons.travel_explore),
+                          title: Text('Traveling'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
