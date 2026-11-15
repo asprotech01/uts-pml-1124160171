@@ -89,9 +89,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const SizedBox(height: 12),
-                  const CircleAvatar(
-                    radius: 36,
-                    backgroundImage: AssetImage('assets/images/sofyan.jpeg'),
+                  const Center(
+                    child: CircleAvatar(
+                      radius: 36,
+                      backgroundImage: AssetImage('assets/images/sofyan.jpeg'),
+                    ),
                   ),
                   const SizedBox(height: 12),
                   const Text(
