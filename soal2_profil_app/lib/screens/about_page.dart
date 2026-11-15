@@ -169,6 +169,39 @@ class AboutPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 20),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      'Pengalaman Kerja',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: Icon(Icons.work_outline),
+                          title: Text('Pengalaman Kerja'),
+                          subtitle: Text('Bekerja di PT Gajah Tunggal Tbk.'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
