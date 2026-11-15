@@ -1,15 +1,221 @@
 import 'package:flutter/material.dart';
 
-class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({super.key});
+import '../models/profile.dart';
+
+class EditProfilePage extends StatefulWidget {
+  final Profile profile;
+
+  const EditProfilePage({super.key, required this.profile});
+
+  @override
+  State<EditProfilePage> createState() => _EditProfilePageState();
+}
+
+class _EditProfilePageState extends State<EditProfilePage> {
+  late final TextEditingController namaController;
+  late final TextEditingController nimController;
+  late final TextEditingController prodiController;
+  late final TextEditingController kelasController;
+  late final TextEditingController bioController;
+  late final TextEditingController emailController;
+  late final TextEditingController hpController;
+  late final TextEditingController githubController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    namaController = TextEditingController(text: widget.profile.nama);
+
+    nimController = TextEditingController(text: widget.profile.nim);
+
+    prodiController = TextEditingController(text: widget.profile.prodi);
+
+    kelasController = TextEditingController(text: widget.profile.kelas);
+
+    bioController = TextEditingController(text: widget.profile.bio);
+
+    emailController = TextEditingController(text: widget.profile.email);
+
+    hpController = TextEditingController(text: widget.profile.hp);
+
+    githubController = TextEditingController(text: widget.profile.github);
+  }
+
+  @override
+  void dispose() {
+    namaController.dispose();
+    nimController.dispose();
+    prodiController.dispose();
+    kelasController.dispose();
+    bioController.dispose();
+    emailController.dispose();
+    hpController.dispose();
+    githubController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Edit Profil'), centerTitle: true),
-      body: const SafeArea(
-        child: Center(
-          child: Text('Halaman Edit Profil', style: TextStyle(fontSize: 18)),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Row(
+                  children: [
+                    Icon(Icons.person_outline),
+                    SizedBox(width: 8),
+                    Text(
+                      'Informasi Pribadi',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: namaController,
+                          decoration: const InputDecoration(
+                            labelText: 'Nama Lengkap',
+                            prefixIcon: Icon(Icons.person),
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: nimController,
+                          keyboardType: TextInputType.number,
+                          decoration: const InputDecoration(
+                            labelText: 'NIM',
+                            prefixIcon: Icon(Icons.badge),
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: prodiController,
+                          decoration: const InputDecoration(
+                            labelText: 'Program Studi',
+                            prefixIcon: Icon(Icons.school),
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: kelasController,
+                          decoration: const InputDecoration(
+                            labelText: 'Kelas',
+                            prefixIcon: Icon(Icons.groups),
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: bioController,
+                          maxLines: 3,
+                          decoration: const InputDecoration(
+                            labelText: 'Bio',
+                            prefixIcon: Icon(Icons.description),
+                            border: OutlineInputBorder(),
+                            alignLabelWithHint: true,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                const Row(
+                  children: [
+                    Icon(Icons.contact_phone_outlined),
+                    SizedBox(width: 8),
+                    Text(
+                      'Informasi Kontak',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: const InputDecoration(
+                            labelText: 'Email',
+                            prefixIcon: Icon(Icons.email),
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: hpController,
+                          keyboardType: TextInputType.phone,
+                          decoration: const InputDecoration(
+                            labelText: 'Nomor HP',
+                            prefixIcon: Icon(Icons.phone),
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: githubController,
+                          decoration: const InputDecoration(
+                            labelText: 'Akun GitHub',
+                            prefixIcon: Icon(Icons.code),
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                SizedBox(
+                  height: 50,
+                  child: ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.save),
+                    label: const Text(
+                      'Simpan Perubahan',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
         ),
       ),
     );
