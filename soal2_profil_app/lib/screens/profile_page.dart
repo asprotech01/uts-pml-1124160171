@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../models/profile.dart';
+import '../widgets/info_tile.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
     final profile = Profile(
       nama: 'Achmad Sofyan',
       nim: '1124160171',
@@ -33,13 +32,14 @@ class ProfilePage extends StatelessWidget {
                 const Center(
                   child: CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage("assets/images/sofyan.jpeg"),
+                    backgroundImage: AssetImage('assets/images/sofyan.jpeg'),
                   ),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   profile.nama,
-                  style: textTheme.headlineSmall?.copyWith(
+                  style: const TextStyle(
+                    fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
@@ -47,26 +47,71 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(height: 8),
                 Text(
                   'NIM: ${profile.nim}',
-                  style: textTheme.bodyMedium,
+                  style: const TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 4),
                 Text(
                   profile.prodi,
-                  style: textTheme.bodyMedium,
+                  style: const TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 4),
                 Text(
                   'Kelas: ${profile.kelas}',
-                  style: textTheme.bodyMedium,
+                  style: const TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
                 Text(
                   profile.bio,
-                  style: textTheme.bodyMedium,
+                  style: const TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 20),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      'Informasi Kontak',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Column(
+                      children: [
+                        InfoTile(
+                          icon: Icons.email,
+                          label: 'Email',
+                          value: profile.email,
+                        ),
+                        const Divider(height: 1),
+                        InfoTile(
+                          icon: Icons.phone,
+                          label: 'Nomor HP',
+                          value: profile.hp,
+                        ),
+                        const Divider(height: 1),
+                        InfoTile(
+                          icon: Icons.code,
+                          label: 'Akun GitHub',
+                          value: profile.github,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 20),
               ],
