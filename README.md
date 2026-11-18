@@ -50,6 +50,22 @@ Pengguna dapat melihat identitas serta kontak mahasiswa, mengedit data melalui f
 | 🌓 **Tema Dinamis** | Light Mode dan Dark Mode melalui tombol di AppBar |
 | 📱 **Layout Responsif** | Tampilan Material Design 3 yang nyaman di berbagai ukuran layar |
 
+## 🖼️ Galeri Screenshot
+
+### Halaman Utama & Informasi
+
+| 👤 Profil Mahasiswa | ✏️ Edit Profil | 📚 Tentang Saya |
+|:---:|:---:|:---:|
+| <img src="soal2_profil_app/assets/screenshots/profil.jpg" width="240" alt="Halaman profil mahasiswa"> | <img src="soal2_profil_app/assets/screenshots/edit_profil.jpg" width="240" alt="Form edit profil"> | <img src="soal2_profil_app/assets/screenshots/tentang_saya.jpg" width="240" alt="Halaman tentang saya"> |
+
+### Navigasi & Tampilan
+
+| 🧭 Drawer Sidebar | ☀️ Light Theme | 📱 Nama Aplikasi |
+|:---:|:---:|:---:|
+| <img src="soal2_profil_app/assets/screenshots/drawer_sidebar.jpg" width="240" alt="Navigasi drawer"> | <img src="soal2_profil_app/assets/screenshots/light_theme.jpg" width="240" alt="Tampilan light theme"> | <img src="soal2_profil_app/assets/screenshots/nama_apk.jpg" width="240" alt="Nama aplikasi pada Android"> |
+
+> Screenshot disimpan pada `soal2_profil_app/assets/screenshots/`. Pastikan keenam file sudah diunggah ke repository dan ekstensi sesuai (`.jpg` atau `.jpeg`).
+
 ## 🛠️ Teknologi
 
 | Teknologi | Penggunaan |
@@ -166,6 +182,7 @@ Data profil disimpan sementara di dalam **state aplikasi**, tanpa database atau 
 Video berisi demonstrasi fitur, validasi formulir, navigasi, perubahan tema, penjelasan kode Flutter, serta dokumentasi GitHub dan APK.
 
 <div align="center">
+
 [![Tonton video presentasi](https://img.youtube.com/vi/bRk54S5qZFk/hqdefault.jpg)](https://youtu.be/bRk54S5qZFk?si=DmXRgAceCfM4bjFp)
 
 **[▶️ Tonton Presentasi UTS di YouTube](https://youtu.be/bRk54S5qZFk?si=DmXRgAceCfM4bjFp)**
