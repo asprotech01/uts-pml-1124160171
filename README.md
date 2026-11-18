@@ -22,15 +22,15 @@ Aplikasi profil mahasiswa berbasis Android yang **sederhana, interaktif, dan res
 
 ## 👨‍🎓 Identitas Mahasiswa
 
-| Informasi | Keterangan |
-|:--|:--|
-| **Nama** | Achmad Sofyan |
-| **NIM** | 1124160171 |
-| **Kelas** | TI24SESH |
-| **Program Studi** | Software Engineering |
-| **Mata Kuliah** | Pemrograman Mobile |
-| **Tugas** | Ujian Tengah Semester (UTS) |
-| **GitHub** | [@asprotech01](https://github.com/asprotech01) |
+| Informasi         | Keterangan                                     |
+| :---------------- | :--------------------------------------------- |
+| **Nama**          | Achmad Sofyan                                  |
+| **NIM**           | 1124160171                                     |
+| **Kelas**         | TI24SESH                                       |
+| **Program Studi** | Software Engineering                           |
+| **Mata Kuliah**   | Pemrograman Mobile                             |
+| **Tugas**         | Ujian Tengah Semester (UTS)                    |
+| **GitHub**        | [@asprotech01](https://github.com/asprotech01) |
 
 ## 📖 Tentang Aplikasi
 
@@ -40,41 +40,41 @@ Pengguna dapat melihat identitas serta kontak mahasiswa, mengedit data melalui f
 
 ## ✨ Fitur Unggulan
 
-| Fitur | Deskripsi |
-|:--|:--|
-| 👤 **Profil Mahasiswa** | Foto profil, nama, NIM, program studi, kelas, bio, dan kontak |
-| ✏️ **Edit Profil** | Form dengan data awal yang sudah terisi dan tombol simpan |
-| ✅ **Validasi Input** | Nama wajib diisi, email berformat valid, nomor HP 10–13 digit |
-| 📚 **Tentang Saya** | Informasi keahlian, hobi, pengalaman kerja, dan pendidikan |
-| 🧭 **Navigasi** | Drawer, Bottom Navigation Bar, dan FloatingActionButton |
-| 🌓 **Tema Dinamis** | Light Mode dan Dark Mode melalui tombol di AppBar |
+| Fitur                   | Deskripsi                                                       |
+| :---------------------- | :-------------------------------------------------------------- |
+| 👤 **Profil Mahasiswa** | Foto profil, nama, NIM, program studi, kelas, bio, dan kontak   |
+| ✏️ **Edit Profil**      | Form dengan data awal yang sudah terisi dan tombol simpan       |
+| ✅ **Validasi Input**   | Nama wajib diisi, email berformat valid, nomor HP 10–13 digit   |
+| 📚 **Tentang Saya**     | Informasi keahlian, hobi, pengalaman kerja, dan pendidikan      |
+| 🧭 **Navigasi**         | Drawer, Bottom Navigation Bar, dan FloatingActionButton         |
+| 🌓 **Tema Dinamis**     | Light Mode dan Dark Mode melalui tombol di AppBar               |
 | 📱 **Layout Responsif** | Tampilan Material Design 3 yang nyaman di berbagai ukuran layar |
 
 ## 🖼️ Galeri Screenshot
 
 ### Halaman Utama & Informasi
 
-| 👤 Profil Mahasiswa | ✏️ Edit Profil | 📚 Tentang Saya |
-|:---:|:---:|:---:|
-| <img src="soal2_profil_app/assets/screenshots/profil.jpg" width="240" alt="Halaman profil mahasiswa"> | <img src="soal2_profil_app/assets/screenshots/edit_profil.jpg" width="240" alt="Form edit profil"> | <img src="soal2_profil_app/assets/screenshots/tentang_saya.jpg" width="240" alt="Halaman tentang saya"> |
+|                                          👤 Profil Mahasiswa                                           |                                           ✏️ Edit Profil                                            |                                             📚 Tentang Saya                                              |
+| :----------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: |
+| <img src="soal2_profil_app/assets/screenshots/profil.jpeg" width="240" alt="Halaman profil mahasiswa"> | <img src="soal2_profil_app/assets/screenshots/edit_profil.jpeg" width="240" alt="Form edit profil"> | <img src="soal2_profil_app/assets/screenshots/tentang_saya.jpeg" width="240" alt="Halaman tentang saya"> |
 
 ### Navigasi & Tampilan
 
-| 🧭 Drawer Sidebar | ☀️ Light Theme | 📱 Nama Aplikasi |
-|:---:|:---:|:---:|
-| <img src="soal2_profil_app/assets/screenshots/drawer_sidebar.jpg" width="240" alt="Navigasi drawer"> | <img src="soal2_profil_app/assets/screenshots/light_theme.jpg" width="240" alt="Tampilan light theme"> | <img src="soal2_profil_app/assets/screenshots/nama_apk.jpg" width="240" alt="Nama aplikasi pada Android"> |
+|                                           🧭 Drawer Sidebar                                           |                                             ☀️ Light Theme                                              |                                              📱 Nama Aplikasi                                              |
+| :---------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
+| <img src="soal2_profil_app/assets/screenshots/drawer_sidebar.jpeg" width="240" alt="Navigasi drawer"> | <img src="soal2_profil_app/assets/screenshots/light_theme.jpeg" width="240" alt="Tampilan light theme"> | <img src="soal2_profil_app/assets/screenshots/nama_apk.jpeg" width="240" alt="Nama aplikasi pada Android"> |
 
 > Screenshot disimpan pada `soal2_profil_app/assets/screenshots/`. Pastikan keenam file sudah diunggah ke repository dan ekstensi sesuai (`.jpg` atau `.jpeg`).
 
 ## 🛠️ Teknologi
 
-| Teknologi | Penggunaan |
-|:--|:--|
-| **Flutter & Dart** | Framework dan bahasa pemrograman aplikasi |
-| **Material Design 3** | Komponen dan tampilan antarmuka |
-| **Visual Studio Code** | Penulisan dan pengembangan kode |
-| **Android SDK** | Menjalankan dan membangun APK Android |
-| **Git & GitHub** | Version control, dokumentasi, dan distribusi release |
+| Teknologi              | Penggunaan                                           |
+| :--------------------- | :--------------------------------------------------- |
+| **Flutter & Dart**     | Framework dan bahasa pemrograman aplikasi            |
+| **Material Design 3**  | Komponen dan tampilan antarmuka                      |
+| **Visual Studio Code** | Penulisan dan pengembangan kode                      |
+| **Android SDK**        | Menjalankan dan membangun APK Android                |
+| **Git & GitHub**       | Version control, dokumentasi, dan distribusi release |
 
 ## 📁 Struktur Project
 
@@ -201,6 +201,6 @@ Video berisi demonstrasi fitur, validasi formulir, navigasi, perubahan tema, pen
 
 **Made with Flutter 💙**
 
-*UTS Pemrograman Mobile · 2026*
+_UTS Pemrograman Mobile · 2026_
 
 </div>
